@@ -1,0 +1,10 @@
+project_id = "rhbjjkbcadebixwforlz"
+
+[functions.symptom-triage]
+verify_jwt = true
+
+[functions.create-video-room]
+verify_jwt = true
+
+[functions.ai-chat]
+verify_jwt = false

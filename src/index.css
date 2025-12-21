@@ -1,0 +1,482 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Vibrant Health Design System - Dynamic & Energetic */
+
+@layer base {
+  :root {
+    /* Base Colors - Clean & Bright */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary: Vibrant Health Green */
+    --primary: 142 76% 36%;
+    /* #10b981 - Emerald Green */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Medical Blue */
+    --secondary: 217 91% 60%;
+    /* #3b82f6 - Blue */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent: Healing Purple */
+    --accent: 258 90% 66%;
+    /* #8b5cf6 - Purple */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 142 76% 36%;
+
+    --radius: 1rem;
+
+    /* Health Status Colors */
+    --success: 142 76% 36%;
+    /* Green */
+    --warning: 38 92% 50%;
+    /* Orange */
+    --emergency: 0 84% 60%;
+    /* Red */
+    --info: 199 89% 48%;
+    /* Cyan */
+    --teal: 173 80% 40%;
+    /* Teal */
+    --pink: 330 81% 60%;
+    /* Pink */
+    --orange: 25 95% 53%;
+    /* Orange */
+    --purple: 258 90% 66%;
+    /* Purple */
+
+    /* Vibrant Gradients */
+    --gradient-health: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+    --gradient-energy: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+    --gradient-medical: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --gradient-vitality: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+    --gradient-primary: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+    --gradient-soft: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+    --gradient-glow: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+    --gradient-hero: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 76% 45%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 91% 65%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 258 90% 70%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 76% 45%;
+
+    --gradient-soft: linear-gradient(180deg, #1a2332 0%, #0f172a 100%);
+    --gradient-glow: radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #1a2332 100%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight font-bold;
+  }
+}
+
+@layer components {
+
+  /* Glassmorphism Effects */
+  .glass-card {
+    @apply bg-white/70 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl hover:shadow-2xl transition-all duration-300;
+  }
+
+  .glass-strong {
+    @apply bg-white/90 dark:bg-black/60 backdrop-blur-2xl border border-white/30 dark:border-white/20 shadow-xl;
+  }
+
+  /* Gradient Buttons */
+  .btn-gradient {
+    @apply bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  .btn-gradient-energy {
+    @apply bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  .btn-gradient-medical {
+    @apply bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  /* Interactive Cards */
+  .health-card {
+    @apply bg-white dark:bg-zinc-900 rounded-2xl border-2 border-emerald-100 dark:border-emerald-900/30 shadow-lg hover:shadow-2xl hover:border-emerald-300 dark:hover:border-emerald-700 hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-2xl hover:border-primary/30 hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+  }
+
+  /* Gradient Classes */
+  .gradient-primary {
+    background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+  }
+
+  .gradient-health {
+    background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+  }
+
+  .gradient-energy {
+    background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+  }
+
+  .gradient-medical {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  }
+
+  .gradient-vitality {
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+  }
+
+  .text-gradient-energy {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+  }
+
+  .text-gradient-medical {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  }
+
+  .text-gradient-vitality {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+  }
+
+  /* Animated Backgrounds */
+  .bg-animated {
+    background: linear-gradient(270deg, #10b981, #14b8a6, #3b82f6);
+    background-size: 600% 600%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  .bg-particles {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-particles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: particle-float 20s linear infinite;
+  }
+}
+
+@layer utilities {
+
+  /* Animations */
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-scale {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.6);
+    }
+  }
+
+  @keyframes heartbeat {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    14% {
+      transform: scale(1.1);
+    }
+
+    28% {
+      transform: scale(1);
+    }
+
+    42% {
+      transform: scale(1.1);
+    }
+
+    70% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes bounce-slow {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes particle-float {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-100px);
+    }
+  }
+
+  @keyframes pulse-slow {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  /* Animation Classes */
+  .animate-fade-up {
+    animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-scale {
+    animation: fade-in-scale 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out forwards;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  /* Stagger Delays */
+  .delay-75 {
+    animation-delay: 75ms;
+  }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-150 {
+    animation-delay: 150ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #10b981, #14b8a6);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #059669, #0d9488);
+  }
+}
