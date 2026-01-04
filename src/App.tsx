@@ -23,6 +23,7 @@ import DoctorAppointments from "./pages/doctor/DoctorAppointments";
 import DoctorPatients from "./pages/doctor/DoctorPatients";
 import DoctorConsultations from "./pages/doctor/DoctorConsultations";
 import ConsultationChat from "./pages/ConsultationChat";
+import VisualDiagnosis from "./pages/VisualDiagnosis";
 import { RoleProtectedRoute } from "./components/auth/RoleProtectedRoute";
 
 const queryClient = new QueryClient();
@@ -118,6 +119,14 @@ function AppRoutes() {
         element={
           <RoleProtectedRoute allowedRoles={['patient']}>
             <CallHistory />
+          </RoleProtectedRoute>
+        }
+      />
+      <Route
+        path="/visual-diagnosis"
+        element={
+          <RoleProtectedRoute allowedRoles={['patient']}>
+            <VisualDiagnosis />
           </RoleProtectedRoute>
         }
       />

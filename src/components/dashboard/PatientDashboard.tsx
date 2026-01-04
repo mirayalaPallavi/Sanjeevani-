@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { SOSButton } from '@/components/emergency/SOSButton';
 import { useAuth } from '@/contexts/AuthContext';
 import { useAppointments } from '@/hooks/useAppointments';
 import { useTriageHistory } from '@/hooks/useTriageHistory';
@@ -101,6 +102,7 @@ export function PatientDashboard() {
           </Link>
         ))}
       </div>
+
 
       <div className="grid md:grid-cols-2 gap-6">
         {/* Upcoming Appointments */}

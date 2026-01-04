@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Header } from './Header';
+import { SOSAlertSystem } from '@/components/emergency/SOSAlertSystem';
 
 interface LayoutProps {
   children: ReactNode;
@@ -11,6 +12,7 @@ export function Layout({ children }: LayoutProps) {
       <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] mix-blend-overlay opacity-50 z-[-1]" />
 
       <Header />
+      <SOSAlertSystem />
 
       {/* Main Content with Transition */}
       <main className="flex-1 pt-4 pb-16 px-4 md:px-6">

@@ -1,20 +1,21 @@
 import { useEffect, useState } from 'react';
-import { Brain, Sparkles, Search, Activity } from 'lucide-react';
+import { Brain, Sparkles, Search, Activity, CheckCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface AIThinkingVisualizerProps {
   isThinking: boolean;
   symptoms?: string[];
+  compact?: boolean;
 }
 
 const thinkingSteps = [
-  { icon: Search, text: "Analyzing symptoms...", delay: 0 },
-  { icon: Brain, text: "Processing medical knowledge...", delay: 1500 },
-  { icon: Activity, text: "Evaluating urgency levels...", delay: 3000 },
-  { icon: Sparkles, text: "Generating recommendations...", delay: 4500 },
+  { icon: Search, text: "Scanning medical database...", delay: 0 },
+  { icon: Brain, text: "Cross-referencing biomarkers...", delay: 1500 },
+  { icon: Activity, text: "Synthesizing health insights...", delay: 3000 },
+  { icon: Sparkles, text: "Finalizing recommendation...", delay: 4500 },
 ];
 
-export function AIThinkingVisualizer({ isThinking, symptoms = [] }: AIThinkingVisualizerProps) {
+export function AIThinkingVisualizer({ isThinking, symptoms = [], compact = false }: AIThinkingVisualizerProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [displayedSymptoms, setDisplayedSymptoms] = useState<string[]>([]);
 
@@ -46,6 +47,52 @@ export function AIThinkingVisualizer({ isThinking, symptoms = [] }: AIThinkingVi
 
   if (!isThinking) return null;
 
+  if (compact) {
+    return (
+      <div className="p-3 rounded-2xl border border-primary/20 bg-primary/5 space-y-3 animate-fade-in mb-4">
+        <div className="flex items-center gap-2 mb-1">
+          <div className="h-6 w-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center animate-pulse">
+            <Brain className="h-3 w-3" />
+          </div>
+          <span className="text-xs font-bold text-primary animate-pulse">AI is thinking...</span>
+        </div>
+
+        <div className="space-y-2">
+          {thinkingSteps.map((step, index) => {
+            const isActive = index === currentStep;
+            const isComplete = index < currentStep;
+            if (!isActive && !isComplete) return null;
+
+            return (
+              <div
+                key={index}
+                className={cn(
+                  "flex items-center gap-2 transition-all duration-500",
+                  isActive ? "opacity-100 scale-100" : "opacity-40 scale-95"
+                )}
+              >
+                <div className={cn(
+                  "h-5 w-5 rounded-full flex items-center justify-center",
+                  isComplete ? "bg-success text-success-foreground" : "bg-primary text-primary-foreground"
+                )}>
+                  {isComplete ? <CheckCircle className="h-3 w-3" /> : <step.icon className="h-2.5 w-2.5" />}
+                </div>
+                <span className="text-[11px] font-medium text-muted-foreground">{step.text}</span>
+                {isActive && (
+                  <div className="flex gap-1 ml-auto">
+                    <span className="w-1 h-1 rounded-full bg-primary animate-bounce" />
+                    <span className="w-1 h-1 rounded-full bg-primary animate-bounce delay-75" />
+                    <span className="w-1 h-1 rounded-full bg-primary animate-bounce delay-150" />
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6 animate-fade-in">
       {/* Symptom Analysis */}
@@ -54,7 +101,7 @@ export function AIThinkingVisualizer({ isThinking, symptoms = [] }: AIThinkingVi
           <Brain className="h-4 w-4 text-primary animate-pulse" />
           AI is analyzing your symptoms
         </h3>
-        
+
         <div className="flex flex-wrap gap-2 mb-4">
           {displayedSymptoms.map((symptom, i) => (
             <span

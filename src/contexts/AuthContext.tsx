@@ -124,14 +124,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       },
     });
 
+    if (error) {
+      console.error('[Auth] Sign-Up Error:', error);
+    }
+
     return { error: error as Error | null };
   };
 
   const signIn = async (email: string, password: string) => {
+    console.log('[Auth] Attempting Sign-In for:', email);
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
+
+    if (error) {
+      console.error('[Auth] Sign-In Error:', error);
+    }
 
     return { error: error as Error | null };
   };
@@ -146,6 +155,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signInWithGoogle = async () => {
     const redirectUrl = `${window.location.origin}/dashboard`;
+    console.log('[Auth] Google Sign-In Redirect URL:', redirectUrl);
 
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -153,6 +163,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         redirectTo: redirectUrl,
       },
     });
+
+    if (error) {
+      console.error('[Auth] Google Sign-In Error:', error);
+    }
 
     return { error: error as Error | null };
   };

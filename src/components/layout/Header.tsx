@@ -29,6 +29,7 @@ import {
   History,
 } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { SOSButton } from '@/components/emergency/SOSButton';
 
 const patientNavItems = [
   { href: '/symptom-checker', labelKey: 'nav.symptom_checker', icon: Activity },
@@ -36,6 +37,7 @@ const patientNavItems = [
   { href: '/doctors', labelKey: 'nav.find_doctors', icon: Stethoscope },
   { href: '/reports', labelKey: 'nav.medical_reports', icon: FileText },
   { href: '/nearby', labelKey: 'nav.nearby_services', icon: MapPin },
+  { href: '/visual-diagnosis', labelKey: 'nav.visual_diagnosis', icon: Shield },
 ];
 
 const doctorNavItems = [
@@ -110,6 +112,7 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-3">
+            {user && <SOSButton variant="header" />}
             <LanguageSwitcher />
             <ThemeToggle />
             {user ? (
