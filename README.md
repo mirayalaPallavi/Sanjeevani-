@@ -2,6 +2,7 @@
 
 Sanjeevani is a web-based telemedicine platform designed to improve healthcare accessibility, especially for rural and underserved communities. The system integrates AI-driven symptom analysis, emotional support, online doctor consultations, and digital healthcare services into a single unified application.
 
+
 📌 Project Overview
 
 This project focuses on:
@@ -17,6 +18,7 @@ Digital prescriptions and medical records
 works on offline 
 
 Improved access to healthcare services in rural areas
+
 
 ✨ Key Features
 
@@ -78,6 +80,7 @@ Offline functionality for areas with low or no internet
 
 Designed specifically for rural and low-connectivity regions
 
+
 ✏️ How to Edit This Project
 
 You can edit and maintain this project using any standard development workflow.
@@ -104,6 +107,7 @@ npm run dev
 
 The application will start with hot reloading and an instant development preview.
 
+
 2️⃣ Edit Directly on GitHub
 
 Navigate to the file you want to modify
@@ -111,6 +115,7 @@ Navigate to the file you want to modify
 Click the ✏️ Edit (pencil) icon
 
 Make changes and commit them directly to the repository
+
 
 3️⃣ Use GitHub Codespaces (Optional)
 
@@ -123,6 +128,7 @@ Select New codespace
 Edit files in the cloud-based environment
 
 Commit and push your changes once complete
+
 
 🛠️ Technologies Used
 
@@ -138,6 +144,7 @@ shadcn/ui – Modern and accessible UI components
 
 Tailwind CSS – Utility-first CSS framework
 
+
 🚀 Deployment
 
 The project can be deployed on platforms such as:
@@ -151,6 +158,7 @@ Any Node.js-compatible hosting service
 Build the project before deployment:
 
 npm run build
+
 
 🎯 Key Impact
 
