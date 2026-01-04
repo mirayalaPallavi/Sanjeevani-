@@ -1,73 +1,127 @@
-# Welcome to your Lovable project
+🏥 Sanjeevani – AI-Powered Telemedicine Platform
 
-## Project info
+Sanjeevani is a web-based telemedicine platform designed to improve healthcare accessibility, especially for rural and underserved communities. The system integrates AI-driven symptom analysis, emotional support, online doctor consultations, and digital healthcare services into a single unified application.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+📌 Project Overview
 
-## How can I edit this code?
+This project focuses on:
 
-There are several ways of editing your application.
+AI-based symptom checking and severity analysis
+Emotional support through an AI chatbot
+Remote doctor consultations
+Digital prescriptions and medical records
+works on offline 
+Improved access to healthcare services in rural areas
 
-**Use Lovable**
+✨ Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Present features in grouped sections, not one long list. This looks professional and well-designed.
 
-Changes made via Lovable will be committed automatically to this repo.
+🧠 AI-Powered Healthcare Intelligence
 
-**Use your preferred IDE**
+AI-based symptom checking with severity classification (Normal / Medium / Emergency)
+Visual diagnosis by uploading images for AI-based health analysis
+Smart suggestions to guide patients before consulting a doctor
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+💬 Emotional & Mental Support
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+AI chatbot for emotional support
+Helps reduce anxiety and loneliness during illness
+Available anytime, even when doctors are not online
 
-Follow these steps:
+🩺 Remote Medical Assistance
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+Online doctor consultations
+Access to healthcare without traveling long distances
+Suitable for rural and underserved areas
+
+📁 Digital Health Records
+
+Digital prescriptions
+Secure storage of medical reports and patient history
+Easy access for both patients and doctors
+
+🚨 Emergency & Safety Features
+
+SOS emergency button for critical situations
+Immediate guidance during emergencies
+Helps users take quick action when time matters
+
+🏥 Location-Based Healthcare Services
+
+Find nearby hospitals and pharmacies
+Distance-based search options 
+Supports faster access to physical healthcare facilities
+
+🌐 Accessibility & Inclusivity
+
+Multilingual support for diverse users
+Offline functionality for areas with low or no internet
+Designed specifically for rural and low-connectivity regions
+
+✏️ How to Edit This Project
+
+You can edit and maintain this project using any standard development workflow.
+
+1️⃣ Edit Locally Using Your Preferred IDE
+Prerequisites
+
+Node.js (recommended: install using nvm)
+npm
+
+Steps to Run the Project Locally
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Step 2: Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install project dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The application will start with hot reloading and an instant development preview.
 
-**Use GitHub Codespaces**
+2️⃣ Edit Directly on GitHub
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Navigate to the file you want to modify
+Click the ✏️ Edit (pencil) icon
+Make changes and commit them directly to the repository
 
-## What technologies are used for this project?
+3️⃣ Use GitHub Codespaces (Optional)
 
-This project is built with:
+Open the repository main page
+Click Code → Codespaces
+Select New codespace
+Edit files in the cloud-based environment
+Commit and push your changes once complete
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+🛠️ Technologies Used
 
-## How can I deploy this project?
+This project is developed using the following technologies:
+Vite – Fast build and development tool
+TypeScript – Strongly typed JavaScript
+React – Component-based frontend framework
+shadcn/ui – Modern and accessible UI components
+Tailwind CSS – Utility-first CSS framework
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+🚀 Deployment
 
-## Can I connect a custom domain to my Lovable project?
+The project can be deployed on platforms such as:
+Vercel
+Netlify
+Any Node.js-compatible hosting service
 
-Yes, you can!
+Build the project before deployment:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+npm run build
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+🎯 Key Impact
+
+Provides faster healthcare access in rural areas
+Reduces hospital overcrowding
+Supports patients both medically and emotionally
+Enables efficient doctor–patient communication
